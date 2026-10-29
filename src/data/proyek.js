@@ -1,0 +1,81 @@
+export const proyek = [
+    {
+        slug: "halaman-profil",
+        judul: "Halaman Profil Pertama",
+        kategori: "Next.js Dasar",
+        minggu: "Minggu 01",
+        gambar: "/proyek/proyek-profil.png",
+        deskripsi: "Halaman web pertama saya, dibuat dengan HTML dasar.",
+        fitur: [
+            "Judul dan paragraf perkenalan dengan h1 dan p",
+            "Foto profil dengan atribut alt",
+            "Daftar hobi dengan ul dan li",
+        ],
+    },
+    {
+        slug: "Portofolio",
+        judul: "Portofolio",
+        kategori: "Next.js",
+        minggu: "Minggu 02",
+        gambar: "/proyek/proyek-portofolio.png",
+        deskripsi: "Website portofolio pribadi untuk memperkenalkan diri dan menampilkan keterampilan serta hasil proyek.",
+        fitur: [
+            "Menampilkan profil dan informasi pribadi",
+            "Menampilkan daftar proyek yang pernah dibuat",
+            "Menyediakan navigasi dan halaman kontak",
+        ],
+    },
+    {
+        slug: "table-jadwal",
+        judul: "Tabel Jadwal Belajar",
+        kategori: "UI/UX",
+        minggu: "Minggu 02",
+        gambar: "/proyek/proyek-jadwall.png",
+        deskripsi: "Desain antarmuka jadwal belajar mingguan yang membantu pengguna mengatur waktu dan kegiatan belajar.",
+        fitur: [
+            "Menampilkan jadwal belajar mingguan dengan tampilan terstruktur",
+            "Mengelompokkan jadwal berdasarkan hari dan waktu",
+            "Menggunakan desain yang sederhana agar mudah dibaca",
+        ],
+    },
+    {
+        slug: "portofolio-responsif",
+        judul: "Portofolio Responsif",
+        kategori: "Next.js",
+        minggu: "Minggu 04",
+        gambar: "/proyek/proyek-responsif.png",
+        deskripsi: "Rapi di ponsel, tablet, dan laptop dengan Flexbox.",
+        fitur: [
+            "Tata letak kartu dengan Flexbox",
+            "Media query mulai lebar 768 px",
+            "Diuji di lebar 360, 768, dan 1280 px",
+        ],
+    },
+    {
+        slug: "website-berita",
+        judul: "Website Berita",
+        kategori: "HTML",
+        minggu: "Minggu 06",
+        gambar: "/proyek/proyek-berita.png",
+        deskripsi: "Website yang menyajikan kumpulan berita agar pembaca dapat melihat informasi dan artikel yang tersedia.",
+        fitur: [
+            "Menampilkan judul dan isi berita",
+            "Menyusun informasi agar mudah dibaca",
+            "Menyediakan tampilan berita yang terorganisir",
+        ],
+    },  
+    {
+        slug: "management-siswa",
+        judul: "Management Siswa",
+        kategori: "Next.js",
+        minggu: "Minggu 06",
+        gambar: "/proyek/proyek-managementsiswaa.png",
+        deskripsi:
+            "Website manajemen siswa untuk mengelola data siswa, kelas, dan pelanggaran dalam satu sistem.",
+        fitur: [
+            "Mengelola data siswa dan informasi kelas",
+            "Menampilkan daftar kelas dan data siswa",
+            "Mencatat dan mengelola data pelanggaran siswa",
+        ],
+    },  
+];
