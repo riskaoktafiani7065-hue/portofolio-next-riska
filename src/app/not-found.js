@@ -12,7 +12,7 @@ export default function NotFound() {
 
         {/* Title */}
         <h1 className="mt-6 text-3xl font-bold text-gray-900 dark:text-white md:text-4xl">
-           Tidak Ditemukan
+           Halaman Tidak Ditemukan
         </h1>
 
         {/* Description */}
