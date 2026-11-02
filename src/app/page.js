@@ -23,8 +23,8 @@ export default function Home() {
         tagline="Siswa kelas XI SMKN 1 Pasuruan , Junior Web Developer di Kelas Industri UBIG. "
       />
 
-      <section className="mt-6 rounded-xl border border-gray-200 bg-white p-5 shadow-sm">
-        <h2 className="mb-4 text-2xl font-bold text-utama">Keahlian</h2>
+      <section className="mt-6 rounded-xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 p-5 shadow-sm">
+        <h2 className="mb-4 text-2xl font-bold text-utama dark:text-sky-200">Keahlian</h2>
 
         <div className="grid gap-4 md:grid-cols-3">
           {skills.map((skill) => (
@@ -35,7 +35,7 @@ export default function Home() {
       </section>
 
       <section className="mt-10">
-        <h2 className="mb-4 text-2xl font-bold text-utama">
+        <h2 className="mb-4 text-2xl font-bold text-utama dark:text-sky-200">
           Proyek Terbaru
         </h2>
         <div className="grid gap-6 md:grid-cols-3">

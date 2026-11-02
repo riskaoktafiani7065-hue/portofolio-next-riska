@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export default function NotFound() {
   return (
-    <main className="flex min-h-screen items-center justify-center bg-[#f5f9ff] px-6 dark:bg-[#061426]">
+    <main className="flex min-h-screen items-center justify-center bg-white px-6 dark:bg-gray-800">
       <div className="w-full max-w-xl text-center">
         {/* 404 */}
         <p className="text-8xl font-black tracking-tight text-blue-600 md:text-9xl">
@@ -31,7 +31,7 @@ export default function NotFound() {
 
           <Link
             href="/"
-            className="rounded-xl border border-gray-200 bg-white px-6 py-3 text-sm font-semibold text-gray-700 transition hover:-translate-y-1 hover:border-blue-300 hover:text-blue-600 dark:border-gray-700 dark:bg-[#111827] dark:text-gray-300 dark:hover:border-blue-700 dark:hover:text-blue-400"
+            className="rounded-xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 px-6 py-3 text-sm font-semibold text-gray-700 dark:text-gray-300 transition hover:-translate-y-1 hover:border-blue-300 hover:text-blue-600 dark:hover:border-blue-700 dark:hover:text-blue-400"
           >
             Kembali ke Beranda 
           </Link>

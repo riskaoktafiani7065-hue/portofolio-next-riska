@@ -30,7 +30,7 @@ export const proyek = [
         judul: "Tabel Jadwal Belajar",
         kategori: "UI/UX",
         minggu: "Minggu 02",
-        gambar: "/proyek/proyek-jadwall.png",
+        gambar: "/proyek/proyek-jadwal1.png",
         deskripsi: "Desain antarmuka jadwal belajar mingguan yang membantu pengguna mengatur waktu dan kegiatan belajar.",
         fitur: [
             "Menampilkan jadwal belajar mingguan dengan tampilan terstruktur",
@@ -69,7 +69,7 @@ export const proyek = [
         judul: "Management Siswa",
         kategori: "Next.js",
         minggu: "Minggu 06",
-        gambar: "/proyek/proyek-managementsiswaa.png",
+        gambar: "/proyek/proyek-management.siswa.png",
         deskripsi:
             "Website manajemen siswa untuk mengelola data siswa, kelas, dan pelanggaran dalam satu sistem.",
         fitur: [

@@ -28,18 +28,20 @@ const jadwalBelajar  = [
 export default function Tentang() {
   return (
     <main className="mx-auto max-w-5xl px-4 py-10">
-      <h1 className="text-3xl font-bold text-utama md:text-4xl">Tentang Saya</h1>
+      <h1 className="text-3xl font-bold text-utama dark:text-sky-200 md:text-4xl">Tentang Saya</h1>
       <div className="mt-10 space-y-6">
         <Kartu judul="Perkenalan">
+          <div className="text-utama dark:text-gray-400">
             <p className="leading-relaxed">
               Saya tinggal di kota pasuruan ,
             </p>
             <p>Saya adalah seorang siswa di SMKN 1 Pasuruan jurusan Rekayasa Perangkat Lunak yang saat ini sedang belajar dan menjelajahi dunia pemrograman.</p>
+            </div>
         </Kartu>
       
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <Kartu judul="Hobi">
-                  <ul className="list-disc list-inside space-y-1">
+                  <ul className="list-disc list-inside space-y-1 text-utama dark:text-gray-400">
                     {hobi.map((hobi, index) => (
                       <li key={index}>{hobi}</li>
                     ))}
@@ -47,10 +49,10 @@ export default function Tentang() {
                 </Kartu>
       
                 <Kartu judul="Cita-cita">
-                  <p className="mb-2">
+                  <p className="mb-2 text-utama dark:text-gray-400">
                     Menjadi <strong>Full Stack Web Developer</strong>. Langkah yang saya rencanakan:
                   </p>
-                  <ol className="list-desimal list-inside space-y-1">
+                  <ol className="list-desimal list-inside space-y-1 text-utama dark:text-gray-400">
                     {rencana.map((rencana, index) => (
                       <li key={index}>{rencana}</li>
                     ))}
@@ -73,10 +75,10 @@ export default function Tentang() {
                     </thead>
                     <tbody>
                       {jadwalBelajar.map((jadwalBelajar, index) => (
-                        <tr key={index} className="border-b border-gray-200">
-                          <td className="py-2 px-4 font-medium">{jadwalBelajar.Hari}</td>
-                          <td className="py-2 px-4 ">{jadwalBelajar.waktu}</td>
-                          <td className="py-2 px-4 ">{jadwalBelajar.kegiatan}</td>
+                        <tr key={index} className="border-b border-gray-200 dark:border-gray-700">
+                          <td className="py-2 px-4 font-medium text-utama dark:text-gray-400">{jadwalBelajar.Hari}</td>
+                          <td className="py-2 px-4 text-utama dark:text-gray-400">{jadwalBelajar.waktu}</td>
+                          <td className="py-2 px-4 text-utama dark:text-gray-400">{jadwalBelajar.kegiatan}</td>
                         </tr>
                       ))}
                     </tbody>
