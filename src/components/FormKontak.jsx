@@ -11,7 +11,7 @@ export default function FormKontak() {
   const [keperluan, setKeperluan] = useState("");
   const [pesan, setPesan] = useState("");
   const [error, setError] = useState({});
-  const [terkirim, setTerkirim] = useState(false);
+  const [berhasil, setBerhasil] = useState(false);
 
   function kirim(e) {
     e.preventDefault();
@@ -23,23 +23,19 @@ export default function FormKontak() {
     if (!email.includes("@")) {
       errorBaru.email = "Email harus memuat tanda @, contoh nama@gmail.com";
     }
-    if (nomor.trim() === "") {
-      errorBaru.nomor = "Nomor HP wajib diisi!";
+    if (nomor.length < 10) {
+      errorBaru.nomor = "Nomor HP minimal 10 angka.";
     }
-    if (keperluan.trim() === "") {
+    if (keperluan === "") {
       errorBaru.keperluan = "Pilih salah satu keperluan anda!";
     }
-    if (pesan.trim() === "") {
-      errorBaru.pesan = "Masukkan Pesan Anda!";
+    if (pesan.trim().length < 10) {
+      errorBaru.pesan = "Pesan minimal 10 karakter.";
     }
 
     setError(errorBaru);
 
-    if (Object.keys(errorBaru).length === 0) {
-      setTerkirim(true);
-    } else {
-      setTerkirim(false);
-    }
+    setBerhasil(Object.keys(errorBaru).length === 0);
   }
 
   return (
@@ -55,7 +51,6 @@ export default function FormKontak() {
           value={nama}
           onChange={(e) => setNama(e.target.value)}
           placeholder="Contoh: Riska Oktafiani"
-          required
           className={kelasInput}
         />
         {error.nama && <p className="mt-1 text-sm text-aksen dark:text-red-300">{error.nama}</p>}
@@ -71,7 +66,6 @@ export default function FormKontak() {
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           placeholder="Contoh: nama@gmail.com"
-          required
           className={kelasInput}
         />
         {error.email && (
@@ -101,7 +95,7 @@ export default function FormKontak() {
         <select
           id="keperluan"
           name="keperluan"
-          defaultValue=""
+          value={keperluan}
           onChange={(e) => setKeperluan(e.target.value)}
           className={kelasInput}
         >
@@ -139,10 +133,10 @@ export default function FormKontak() {
         Kirim Pesan
       </button>
 
-      {terkirim && (
-        <div className="mt-2 rounded-lg bg-green-800 px-4 py-3 text-green-100">
-          Terima kasih, {nama}! Pesan Anda Sudah Terkirim.
-        </div>
+      {berhasil && (
+        <p className="mt-2 rounded-lg bg-green-800 px-4 py-3 text-green-100">
+          Terima kasih, {nama}! Pesan anda sudah lolos pemeriksaan.
+        </p>
       )}
     </form>
   );

@@ -31,7 +31,7 @@ export default function Tentang() {
       <h1 className="text-3xl font-bold text-utama dark:text-sky-200 md:text-4xl">Tentang Saya</h1>
       <div className="mt-10 space-y-6">
         <Kartu judul="Perkenalan">
-          <div className="text-utama dark:text-gray-400">
+          <div className="text-utama dark:text-gray-300">
             <p className="leading-relaxed">
               Saya tinggal di kota pasuruan ,
             </p>
@@ -41,7 +41,7 @@ export default function Tentang() {
       
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <Kartu judul="Hobi">
-                  <ul className="list-disc list-inside space-y-1 text-utama dark:text-gray-400">
+                  <ul className="list-disc list-inside space-y-1 text-utama dark:text-gray-300">
                     {hobi.map((hobi, index) => (
                       <li key={index}>{hobi}</li>
                     ))}
@@ -49,10 +49,10 @@ export default function Tentang() {
                 </Kartu>
       
                 <Kartu judul="Cita-cita">
-                  <p className="mb-2 text-utama dark:text-gray-400">
+                  <p className="mb-2 text-utama dark:text-gray-300">
                     Menjadi <strong>Full Stack Web Developer</strong>. Langkah yang saya rencanakan:
                   </p>
-                  <ol className="list-desimal list-inside space-y-1 text-utama dark:text-gray-400">
+                  <ol className="list-desimal list-inside space-y-1 text-utama dark:text-gray-300">
                     {rencana.map((rencana, index) => (
                       <li key={index}>{rencana}</li>
                     ))}
@@ -76,9 +76,9 @@ export default function Tentang() {
                     <tbody>
                       {jadwalBelajar.map((jadwalBelajar, index) => (
                         <tr key={index} className="border-b border-gray-200 dark:border-gray-700">
-                          <td className="py-2 px-4 font-medium text-utama dark:text-gray-400">{jadwalBelajar.Hari}</td>
-                          <td className="py-2 px-4 text-utama dark:text-gray-400">{jadwalBelajar.waktu}</td>
-                          <td className="py-2 px-4 text-utama dark:text-gray-400">{jadwalBelajar.kegiatan}</td>
+                          <td className="py-2 px-4 font-medium text-utama dark:text-gray-300">{jadwalBelajar.Hari}</td>
+                          <td className="py-2 px-4 text-utama dark:text-gray-300">{jadwalBelajar.waktu}</td>
+                          <td className="py-2 px-4 text-utama dark:text-gray-300">{jadwalBelajar.kegiatan}</td>
                         </tr>
                       ))}
                     </tbody>
