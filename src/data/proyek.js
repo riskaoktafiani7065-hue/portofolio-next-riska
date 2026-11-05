@@ -13,7 +13,7 @@ export const proyek = [
         ],
     },
     {
-        slug: "Portofolio",
+        slug: "portofolio",
         judul: "Portofolio",
         kategori: "Next.js",
         minggu: "Minggu 02",
