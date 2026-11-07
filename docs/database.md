@@ -46,3 +46,15 @@ dengan `now()` |
 | `level` | `text` | Dasar, Menengah, atau Mahir |
 RLS aktif. Policy `Pengunjung boleh membaca keahlian`: peran `anon`
 boleh `select` semua baris.
+## Tabel `jadwal`
+Jadwal Belajar Riska Oktafiani.
+| Kolom | Tipe | Keterangan |
+| --- | --- | --- |
+| `id` | `int8` | Primary key, nomor otomatis 1, 2, 3, ... |
+| `created_at` | `timestamptz` | Waktu baris dibuat, terisi otomatis
+dengan `now()` |
+| `hari` | `text` | hari apa saja |
+| `waktu` | `text` | 19.00 - 22.00 |
+| `kegiatan` | `text` | Mengerjakan tugas dll. |
+RLS aktif. Policy `Pengunjung boleh membaca jadwal belajar `: peran `anon`
+boleh `select` semua baris.
