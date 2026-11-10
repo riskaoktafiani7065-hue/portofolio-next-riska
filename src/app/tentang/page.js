@@ -1,4 +1,5 @@
 import Kartu from "@/components/Kartu";
+import { supabase } from "@/lib/supabase";
 
 export const metadata = {
     title: "Tentang",
@@ -17,15 +18,13 @@ const rencana = [
   "Bisa bekerja sesuai bidang keahlian saya",
 ];
 
-const jadwalBelajar  = [
-  {Hari: "Senin", waktu: "19.00 - 22.00", kegiatan: "Mengerjakan tugas dari UBIG"},
-  {Hari: "Selasa", waktu: "15.00 - 17.00", kegiatan: "Membuat Video Presentasi"},
-  {Hari: "Rabu", waktu: "20.00 ", kegiatan: "Mengumpulkan Tugas UBIG"},
-  {Hari: "Kamis", waktu: "19.00 - 22.00", kegiatan: "Meet dan live coding"},
-  {Hari: "Minggu", waktu: "19.00 - 22.00", kegiatan: "Mengerjakan tugas untuk hari senin"},
-]
 
-export default function Tentang() {
+export default async function Tentang() {
+  const { data: jadwalBelajar } = await supabase
+     .from("jadwal")
+     .select("*")
+     .order("id");
+
   return (
     <main className="mx-auto max-w-5xl px-4 py-10">
       <h1 className="text-3xl font-bold text-primary md:text-4xl">Tentang Saya</h1>
@@ -74,11 +73,11 @@ export default function Tentang() {
                       </tr>
                     </thead>
                     <tbody>
-                      {jadwalBelajar.map((jadwalBelajar, index) => (
+                      {jadwalBelajar && jadwalBelajar.map((item, index) => (
                         <tr key={index} className="border-b border-border">
-                          <td className="py-2 px-4 font-medium text-utama dark:text-gray-300">{jadwalBelajar.Hari}</td>
-                          <td className="py-2 px-4 text-utama dark:text-gray-300">{jadwalBelajar.waktu}</td>
-                          <td className="py-2 px-4 text-utama dark:text-gray-300">{jadwalBelajar.kegiatan}</td>
+                          <td className="py-2 px-4 font-medium text-utama dark:text-gray-300">{item.Hari}</td>
+                          <td className="py-2 px-4 text-utama dark:text-gray-300">{item.waktu}</td>
+                          <td className="py-2 px-4 text-utama dark:text-gray-300">{item.kegiatan}</td>
                         </tr>
                       ))}
                     </tbody>
