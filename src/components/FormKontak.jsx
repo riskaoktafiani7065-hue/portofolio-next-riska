@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { Button } from "@/components/ui/button";
 
 const kelasInput = "mt-1 w-full rounded-lg border border-gray-300 bg-card p-2";
 
@@ -126,12 +127,12 @@ export default function FormKontak() {
         />
       </div>
       {error.pesan && <p className="mt-1 text-sm text-aksen">{error.pesan}</p>}
-      <button
+      <Button
         type="submit"
-        className="rounded-lg bg-red-700 px-4 py-2 font-semibold text-white transition hover:bg-red-800"
+        size="lg"
       >
         Kirim Pesan
-      </button>
+      </Button>
 
       {berhasil && (
         <p className="mt-2 rounded-lg bg-green-800 px-4 py-3 text-green-100">

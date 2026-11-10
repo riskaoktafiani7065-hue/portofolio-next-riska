@@ -1,43 +1,64 @@
 import FormKontak from "@/components/FormKontak";
+import { Card, CardContent, CardHeader, CardTitle} from "@/components/ui/card";
 
 export const metadata = {
-    title: "Kontak",
-    description: "Hubungi Riska Oktafiani melalui form kontak,email,atau Github",
+  title: "Kontak",
+  description:
+    "Hubungi Riska Oktafiani melalui form kontak, email, atau Github",
 };
 
 export default function Kontak() {
-    return (
-        <main className="w-full mx-auto max-w-5xl px-4 py-10">
-            <h1 className="text-3xl font-bold text-primary md:text-4xl">
-                Hubungi Saya
-            </h1>
-            <p className="mt-3 text-lg text-muted-foreground">
-                Punya pertanyaan atau ingin bekerja sama? isi form berikut.
-            </p>
+  return (
+    <main className="w-full mx-auto max-w-5xl px-4 py-10">
+      <h1 className="text-3xl font-bold text-primary md:text-4xl">
+        Hubungi Saya
+      </h1>
 
-            <div className="mt-6 grid grid-cols-1 gap-6 md:grid-cols-3">
-                <section className="w-full min-w-0 rounded-xl border border-gray-200 bg-white p-5 shadow-sm dark:border-gray-700 dark:bg-gray-800 md:col-span-2">
-                    <FormKontak />
-                </section>
+      <p className="mt-3 text-lg text-muted-foreground">
+        Punya pertanyaan atau ingin bekerja sama? Isi form berikut.
+      </p>
 
-                <aside className="w-full min-w-0 rounded-xl border border-gray-200 bg-white p-5 shadow-sm dark:border-gray-700 dark:bg-gray-800 md:col-span-1">
-                    <h3 className="font-bold text-xl">Temukan saya di </h3>
-                    <ul>
-                        <li 
-                         className="font-semibold text-aksen mt-3"
-                        >
-                            <a 
-                             href="https://github.com/riskaoktafiani7065-hue"
-                            >
-                                Github
-                            </a>
-                        </li>
-                        <li className="font-semibold text-aksen">
-                            riskaoktafiani7065@gmail.com
-                        </li>
-                    </ul>
-                </aside>
-            </div>
-        </main>
-    );
+      <div className="mt-6 grid grid-cols-1 gap-6 md:grid-cols-3">
+        {/* Card Form Kontak */}
+        <Card className="w-full min-w-0 md:col-span-2">
+          <CardContent>
+            <FormKontak />
+          </CardContent>
+        </Card>
+
+        {/* Card Informasi Kontak */}
+        <Card className="w-full min-w-0 md:col-span-1">
+          <CardHeader>
+            <CardTitle className="text-2xl font-bold text-primary">
+              Temukan Saya di
+            </CardTitle>
+          </CardHeader>
+
+          <CardContent>
+            <ul className="space-y-3">
+              <li>
+                <a
+                  href="https://github.com/riskaoktafiani7065-hue"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="font-semibold text-aksen hover:underline"
+                >
+                  GitHub
+                </a>
+              </li>
+
+              <li>
+                <a
+                  href="mailto:riskaoktafiani@gmail.com"
+                  className="font-semibold text-aksen hover:underline"
+                >
+                  riskaoktafiani@gmail.com
+                </a>
+              </li>
+            </ul>
+          </CardContent>
+        </Card>
+      </div>
+    </main>
+  );
 }
