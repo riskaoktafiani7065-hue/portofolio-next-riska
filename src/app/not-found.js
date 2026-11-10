@@ -31,7 +31,7 @@ export default function NotFound() {
 
           <Link
             href="/"
-            className="rounded-xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 px-6 py-3 text-sm font-semibold text-gray-700 dark:text-gray-300 transition hover:-translate-y-1 hover:border-blue-300 hover:text-blue-600 dark:hover:border-blue-700 dark:hover:text-blue-400"
+            className="rounded-xl border border-border bg-card px-6 py-3 text-sm font-semibold text-muted-foreground transition hover:-translate-y-1 hover:border-blue-300 hover:text-blue-600 dark:hover:border-blue-700 dark:hover:text-blue-400"
           >
             Kembali ke Beranda 
           </Link>

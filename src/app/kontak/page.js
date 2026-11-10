@@ -8,10 +8,10 @@ export const metadata = {
 export default function Kontak() {
     return (
         <main className="w-full mx-auto max-w-5xl px-4 py-10">
-            <h1 className="text-3xl font-bold text-utama dark:text-sky-200 md:text-4xl">
+            <h1 className="text-3xl font-bold text-primary md:text-4xl">
                 Hubungi Saya
             </h1>
-            <p className="mt-3 text-lg text-gray-700 dark:text-gray-300">
+            <p className="mt-3 text-lg text-muted-foreground">
                 Punya pertanyaan atau ingin bekerja sama? isi form berikut.
             </p>
 
@@ -24,7 +24,7 @@ export default function Kontak() {
                     <h3 className="font-bold text-xl">Temukan saya di </h3>
                     <ul>
                         <li 
-                         className="font-semibold text-aksen dark:text-red-300 mt-3"
+                         className="font-semibold text-aksen mt-3"
                         >
                             <a 
                              href="https://github.com/riskaoktafiani7065-hue"
@@ -32,7 +32,7 @@ export default function Kontak() {
                                 Github
                             </a>
                         </li>
-                        <li className="font-semibold text-aksen dark:text-red-300">
+                        <li className="font-semibold text-aksen">
                             riskaoktafiani7065@gmail.com
                         </li>
                     </ul>
