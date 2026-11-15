@@ -11,7 +11,7 @@ function getBadgeVariant(kategori) {
     "ui/ux" : "uiux",
     uiux: "uiux",
     "next.js dasar" : "nextjsdasar",
-    nextjsdasar : "nextjsdasar",
+     nextjsdasar : "nextjsdasar",
   };
 
   return warnaKategori[String(kategori).toLowerCase()] || "outline";
