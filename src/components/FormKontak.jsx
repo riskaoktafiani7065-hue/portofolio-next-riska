@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
+import { kirimKontak } from "@/app/actions.js";
 
 const kelasInput = "mt-1 w-full rounded-lg border border-gray-300 bg-card p-2";
 
@@ -12,32 +13,51 @@ export default function FormKontak() {
   const [keperluan, setKeperluan] = useState("");
   const [pesan, setPesan] = useState("");
   const [error, setError] = useState({});
+  const [gagal, setGagal] = useState("");
   const [berhasil, setBerhasil] = useState(false);
 
-  function kirim(e) {
-    e.preventDefault();
-    const errorBaru = {};
+  async function kirim(e) {
+  e.preventDefault();
 
-    if (nama.trim() === "") {
-      errorBaru.nama = "Nama wajib diisi.";
-    }
-    if (!email.includes("@")) {
-      errorBaru.email = "Email harus memuat tanda @, contoh nama@gmail.com";
-    }
-    if (nomor.length < 10) {
-      errorBaru.nomor = "Nomor HP minimal 10 angka.";
-    }
-    if (keperluan === "") {
-      errorBaru.keperluan = "Pilih salah satu keperluan anda!";
-    }
-    if (pesan.trim().length < 10) {
-      errorBaru.pesan = "Pesan minimal 10 karakter.";
-    }
+  const errorBaru = {};
+  setGagal("");
+  setBerhasil(false);
 
-    setError(errorBaru);
-
-    setBerhasil(Object.keys(errorBaru).length === 0);
+  if (nama.trim() === "") {
+    errorBaru.nama = "Nama wajib diisi.";
   }
+  if (!email.includes("@")) {
+    errorBaru.email = "Email harus memuat tanda @, contoh nama@gmail.com";
+  }
+  if (nomor.length < 10) {
+    errorBaru.nomor = "Nomor HP minimal 10 angka.";
+  }
+  if (keperluan === "") {
+    errorBaru.keperluan = "Pilih salah satu keperluan anda!";
+  }
+  if (pesan.trim().length < 10) {
+    errorBaru.pesan = "Pesan minimal 10 karakter.";
+  }
+
+  setError(errorBaru);
+
+  if (Object.keys(errorBaru).length > 0) {
+    return;
+  }
+
+  const hasil = await kirimKontak({
+    nama,
+    email,
+    pesan,
+  });
+
+  if (hasil.error) {
+    setGagal(hasil.error);
+    return;
+  }
+
+  setBerhasil(true);
+}
 
   return (
     <form onSubmit={kirim} noValidate className="space-y-4">
@@ -134,9 +154,13 @@ export default function FormKontak() {
         Kirim Pesan
       </Button>
 
+      {gagal && (
+        <p className="mt-2 text-aksen">{gagal}</p>
+      )}
+
       {berhasil && (
         <p className="mt-2 rounded-lg bg-green-800 px-4 py-3 text-green-100">
-          Terima kasih, {nama}! Pesan anda sudah lolos pemeriksaan.
+          Pesanmu sudah terkirim.
         </p>
       )}
     </form>

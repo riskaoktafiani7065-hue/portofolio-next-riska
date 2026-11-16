@@ -7,9 +7,17 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import TombolKirim from "./TombolKirim";
+import { toast } from "sonner";
 
 export default function FormBukuTamu() {
-  const [state, formAction] = useActionState(kirimPesan, {});
+  async function kirimDanBeriTahu(stateSebelum, formData) {
+    const hasil = await kirimPesan(stateSebelum, formData);
+    if (hasil.berhasil) {
+      toast.success(hasil.berhasil);
+    }
+    return hasil;
+  }
+  const [state, formAction] = useActionState(kirimDanBeriTahu, {});
 
   return (
     <form action={formAction} className="space-y-4">
